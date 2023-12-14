@@ -1,16 +1,21 @@
 #include "monty.h"
-
 /**
- * pall - Function to print all values on the stack
- * @stack: Pointer to the stack
- */
-void pall(const MontyStack *stack)
+ * f_pall - prints the stack
+ * @head: stack head
+ * @counter: no used
+ * Return: no return
+*/
+void f_pall(stack_t **head, unsigned int counter)
 {
-const MontyStack *current = stack;
+stack_t *t;
+(void)counter;
 
-while (current != NULL)
+t = *head;
+if (t == NULL)
+return;
+while (t)
 {
-printf("%d\n", current->data);
-current = current->next;
+printf("%d\n", t->n);
+t = t->next;
 }
 }
